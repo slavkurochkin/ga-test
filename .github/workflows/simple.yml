@@ -11,6 +11,7 @@ jobs:
         containers: [l1, l2, l3]
     steps:
       - name: echo a string
+        run: echo 'Hello you all'
       - if: $ {{ matrix.containers }} == 'l1'
         run: echo "Hello L1"
       - if: $ {{ matrix.containers }} == 'l2'
