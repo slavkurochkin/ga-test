@@ -11,7 +11,13 @@ jobs:
         containers: [l1, l2, l3]
     steps:
       - name: echo a string
-        run: echo "Hello World"
+      - if: matrix.containers == 'l1'
+        run: echo "Hello L1"
+      - if: matrix.containers == 'l2'
+        run: echo "Hello L2" 
+      - if: matrix.containers == 'l3'
+        run: echo "Hello L3" 
+           
       - name: multiple script
         run: |
           node -v
