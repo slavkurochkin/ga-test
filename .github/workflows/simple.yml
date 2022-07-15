@@ -5,6 +5,10 @@ on: [push]
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [l1, l2, l3]
     steps:
       - name: echo a string
         run: echo "Hello World"
