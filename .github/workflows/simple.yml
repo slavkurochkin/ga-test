@@ -12,11 +12,11 @@ jobs:
     steps:
       - name: echo a string
         run: echo 'Hello you all'
-      - if: $ {{ matrix.containers }} == 'l1'
+      - if: ${{ matrix.containers }} == 'l1'
         run: echo "Hello L1"
-      - if: $ {{ matrix.containers }} == 'l2'
+      - if: ${{ matrix.containers }} == 'l2'
         run: echo "Hello L2" 
-      - if: $ {{ matrix.containers }} == 'l3'
+      - if: ${{ matrix.containers }} == 'l3'
         run: echo "Hello L3" 
 
       - name: multiple script
