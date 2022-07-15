@@ -10,13 +10,12 @@ jobs:
       matrix:
         containers: [l1, l2, l3]
     steps:
-      - uses: actions/setup-node@v3
       - name: echo a string
-      - if: matrix.containers == 'l1'
+      - if: $ {{ matrix.containers }} == 'l1'
         run: echo "Hello L1"
-      - if: matrix.containers == 'l2'
+      - if: $ {{ matrix.containers }} == 'l2'
         run: echo "Hello L2" 
-      - if: matrix.containers == 'l3'
+      - if: $ {{ matrix.containers }} == 'l3'
         run: echo "Hello L3" 
 
       - name: multiple script
