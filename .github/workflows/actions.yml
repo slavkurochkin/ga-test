@@ -1,0 +1,15 @@
+name: Actions Worklfow
+
+on: [push]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simple JS Actions
+        id: greet
+        uses: actions/hellow-world-javascript-action@v1
+        with:
+          who-to-greet: Slav
+      - name: Log Greeeting Time
+        run: echo  "${{ steps.greet.otputs.time }}"
