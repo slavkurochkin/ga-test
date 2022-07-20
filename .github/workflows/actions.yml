@@ -1,6 +1,26 @@
 name: Actions Worklfow
 
-on: [push, pull_request]
+on:
+  pull_request:
+    branches:
+      - master
+      - 'feature/*' # matches feature/featA , feature/featB
+      # doesn't match feature/feat/a
+      - 'feature/**' # matches feature/feat/a, feature/featA
+    tags:
+      - v1.*
+    # paths:
+    #  - '**.js'
+    #  - '!filename.js'
+    paths-ignore:
+      - 'docs/**'  
+  #repository_dispatch:
+  #  types: [build]
+  #schedule:
+  #  - cron: "* * * * *"
+  # push:
+  #pull_request: 
+  #  types: [closed, assigned, opened, reopened]
 
 jobs:
   run-github-actions:
